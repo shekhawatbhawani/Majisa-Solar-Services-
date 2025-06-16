@@ -6,6 +6,8 @@ import Contact from './Components/Contact';
 import FAQ from './Components/FAQs';
 import About from './Components/About';
 import Services from './Components/Services';
+import BookInstallation from './Components/Book';
+import QuoteForm from './Components/QuoteForm';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FAQ/>} />
         <Route path="/about" element={<About/>} />
-        <Route path="/services" element={<Services/>} />
+        <Route path="/services" element={< Services/>} />
+        <Route path="/book" element={< BookInstallation/>} />
+        <Route path="/quote" element={<QuoteForm/>} />
 
       </Routes>
       <Footer/>
