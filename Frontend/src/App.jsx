@@ -8,6 +8,11 @@ import About from './Components/About';
 import Services from './Components/Services';
 import BookInstallation from './Components/Book';
 import QuoteForm from './Components/QuoteForm';
+import SolarGallery from './Components/SolarGallery';
+import ProjectList from './Components/Projects';
+import Testimonials from './Components/Testimonials';
+import TestimonialForm from './Components/TestimonialForm';
+import AuthPage from './Components/AuthPage';
 
 function App() {
   return (
@@ -21,7 +26,11 @@ function App() {
         <Route path="/services" element={< Services/>} />
         <Route path="/book" element={< BookInstallation/>} />
         <Route path="/quote" element={<QuoteForm/>} />
-
+        {/* <Route path="/gallery" element={<SolarGallery/>} /> */}
+        <Route path="/projects" element={<ProjectList/>} />
+        <Route path="/testimonials" element={<Testimonials/>} />
+        <Route path="/feedback" element={<TestimonialForm/>} />
+        <Route path="/signup" element={<AuthPage/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

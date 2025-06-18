@@ -3,51 +3,72 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaSolarPanel, FaCheckCircle, FaMoneyBillWave, FaTools, FaQuoteLeft } from "react-icons/fa";
 import ImageSlider from "../components/ImageSlider";
+import Slider from "react-slick";
+import SolarBenefits from "./SolarBenefits";
+import WhyGoSolar from "./WhyGoSolar";
+import ProjectSlider from "./ProjectSlider";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const testimonials = [
+  {
+    message: "Majisa Solar made the solar switch smooth. My bills dropped instantly!",
+    author: "Ramesh Singh, Jaipur",
+  },
+  {
+    message: "Professional and helpful team. Very happy with the rooftop solar service.",
+    author: "Sunita Sharma, Sikar",
+  },
+  {
+    message: "Installation was quick and clean. The team guided us very well throughout.",
+    author: "Anil Meena, Kota",
+  },
+  {
+    message: "Affordable pricing and excellent support! Highly recommended.",
+    author: "Pooja Verma, Ajmer",
+  },
+];
 
 const Home = () => {
+   const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768, // mobile
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
   return (
-    <div className="pt-20">
-      {/* Hero Section - Slider */}
-      <div className="m-6">
+    <div className="mt-20">
+      <div className="mx-10 bg-gray-700 rounded-2xl">
 
       <ImageSlider />
       </div>
 
-      {/* About Us */}
-      <section className="max-w-6xl mx-auto px-4 py-10">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">About Us</h2>
-        <p className="text-center text-gray-600 max-w-3xl mx-auto">
-          Majisa Solar is committed to delivering sustainable and affordable solar energy solutions.
-          We focus on quality service, reduced bills, and a greener future.
-        </p>
-      </section>
+      <SolarBenefits/>
 
-      {/* Services */}
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="bg-white p-6 shadow rounded-lg">
-              <FaSolarPanel className="text-4xl text-yellow-400 mx-auto mb-4" />
-              <h3 className="font-semibold text-lg">Rooftop Solar Installation</h3>
-              <p className="text-gray-600">Affordable and efficient solar panels for homes and businesses.</p>
-            </div>
-            <div className="bg-white p-6 shadow rounded-lg">
-              <FaTools className="text-4xl text-yellow-400 mx-auto mb-4" />
-              <h3 className="font-semibold text-lg">Solar Maintenance</h3>
-              <p className="text-gray-600">Periodic checks and cleaning for long-term efficiency.</p>
-            </div>
-            <div className="bg-white p-6 shadow rounded-lg">
-              <FaCheckCircle className="text-4xl text-yellow-400 mx-auto mb-4" />
-              <h3 className="font-semibold text-lg">Govt Subsidy Help</h3>
-              <p className="text-gray-600">We assist in applying and claiming subsidy schemes.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <ProjectSlider/>
+
+
+      <WhyGoSolar/>
+
+     
+
+   
 
       {/* Why Choose Us */}
-      <section className="py-10">
+      {/* <section className="py-10">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">Why Choose Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -68,40 +89,60 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">What Our Clients Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-            <div className="bg-white p-6 shadow rounded">
-              <FaQuoteLeft className="text-yellow-400 text-2xl mb-2" />
-              <p className="text-gray-600">Majisa Solar made the solar switch smooth. My bills dropped instantly!</p>
-              <p className="text-sm text-gray-500 mt-3">– Ramesh Singh, Jaipur</p>
+     <section className="bg-gray-100 py-10">
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">What Our Clients Say</h2>
+        <Slider {...settings}>
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="p-4">
+              <div className="bg-white p-6 shadow rounded h-full">
+                <FaQuoteLeft className="text-yellow-400 text-2xl mb-3" />
+                <p className="text-gray-600">{testimonial.message}</p>
+                <p className="text-sm text-gray-500 mt-4">– {testimonial.author}</p>
+              </div>
             </div>
-            <div className="bg-white p-6 shadow rounded">
-              <FaQuoteLeft className="text-yellow-400 text-2xl mb-2" />
-              <p className="text-gray-600">Professional and helpful team. Very happy with the rooftop solar service.</p>
-              <p className="text-sm text-gray-500 mt-3">– Sunita Sharma, Sikar</p>
-            </div>
-          </div>
-        </div>
-      </section>
+          ))}
+        </Slider>
+        <div className="mt-10 flex justify-center">
+  <Link
+    to="/feedback"
+    className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300 ease-in-out"
+  >
+    <FaCheckCircle className="text-white text-lg" />
+    Give Your Feedback
+  </Link>
+    </div>
+      </div>
+    </section>
 
       {/* CTA */}
-      <section className="py-10 bg-gray-900 text-white text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Switch to Solar?</h2>
-        <p className="mb-6 text-gray-300">Join the clean energy movement with Majisa Solar.</p>
-        <div className="flex flex-col md:flex-row justify-center gap-4">
-          <Link to="/quote" className="bg-yellow-400 text-gray-900 px-6 py-3 rounded hover:bg-yellow-500 transition">
-            Get a Free Quote
-          </Link>
-          <Link to="/book" className="bg-white text-gray-900 px-6 py-3 rounded hover:bg-gray-200 transition">
-            Book Installation
-          </Link>
-        </div>
-      </section>
+    <section className="py-16 px-4 bg-white text-center">
+  <h2 className="text-4xl font-extrabold text-gray-800 mb-4">
+    Ready to Switch to Solar?
+  </h2>
+  <p className="mb-8 text-gray-600 text-lg max-w-xl mx-auto">
+    Join the clean energy movement with <span className="text-yellow-500 font-semibold">Majisa Solar</span>.
+  </p>
+  <div className="flex flex-col md:flex-row justify-center gap-6">
+    <Link
+      to="/quote"
+      className="bg-yellow-400 text-white font-medium px-8 py-3 rounded-full shadow hover:bg-yellow-500 transition-all duration-300"
+    >
+      Get a Free Quote
+    </Link>
+    <Link
+      to="/book"
+      className="bg-gray-100 text-gray-800 font-medium px-8 py-3 rounded-full shadow hover:bg-gray-200 transition-all duration-300"
+    >
+      Book Installation
+    </Link>
+  </div>
+</section>
+
+
     </div>
   );
 };

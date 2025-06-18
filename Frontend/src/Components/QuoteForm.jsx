@@ -1,14 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const QuoteForm = () => {
   return (
     <div className="bg-white mt-10 py-10 px-6 max-w-3xl mx-auto rounded-2xl shadow-md">
+      {/* Back Button */}
+      <div className="mb-6">
+        <Link
+          to="/"
+          className="inline-block text-yellow-600 hover:text-yellow-700 font-medium transition"
+        >
+          ← Back to Home
+        </Link>
+      </div>
+
       <h2 className="text-3xl font-bold text-center text-[#f59e0b] mb-6">
         Get a Free Quote
       </h2>
       <p className="text-center text-gray-600 mb-6">
         Fill in the details below to receive a customized solar quote.
       </p>
+
       <form className="space-y-5">
         <input
           type="text"
