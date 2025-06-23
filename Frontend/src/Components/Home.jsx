@@ -8,7 +8,8 @@ import {
   FaTools,
   FaQuoteLeft,
 } from "react-icons/fa";
-import ImageSlider from "../components/ImageSlider";
+import ImageSlider from "../Components/ImageSlider"; // ✅ correct (capital "C")
+
 import Slider from "react-slick";
 import SolarBenefits from "./SolarBenefits";
 import WhyGoSolar from "./WhyGoSolar";
