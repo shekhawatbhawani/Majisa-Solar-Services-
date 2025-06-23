@@ -56,19 +56,33 @@ const projects = [
 ];
 
 const ProjectSlider = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: false,
-  };
+ const settings = {
+  dots: false,
+  infinite: true,
+  speed: 700,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  arrows: false,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024, // lg and below
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 640, // sm and below
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+};
 
   return (
-    <div className="bg-gray-100 py-10 px-4 mt-16">
+    <div className="bg-gray-100 py-10 px-1 mt-16">
       <h2 className="text-2xl md:text-3xl font-bold text-center text-[#16a34a] mb-6">
         Recent Installations
       </h2>

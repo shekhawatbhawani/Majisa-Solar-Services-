@@ -21,7 +21,7 @@ const AdminHome = () => {
         {/* Buttons */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           <button
-            onClick={() => navigate("/add-customer")}
+            onClick={() => navigate("/admin/customers")}
             className="bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-green-700 transition"
           >
             ➕ Add Customer
@@ -35,7 +35,7 @@ const AdminHome = () => {
           </button>
 
           <button
-            onClick={() => navigate("/add-product")}
+            onClick={() => navigate("/admin/projects")}
             className="bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-blue-700 transition"
           >
             🛠️ Add Product

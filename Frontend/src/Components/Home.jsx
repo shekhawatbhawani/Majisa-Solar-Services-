@@ -15,7 +15,7 @@ import SolarBenefits from "./SolarBenefits";
 import WhyGoSolar from "./WhyGoSolar";
 import ProjectSlider from "./ProjectSlider";
 import axios from "axios";
-import video from "../assets/Images/solarVideo.mp4"
+import video from "../assets/Images/solarVideo.mp4";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -44,7 +44,9 @@ const Home = () => {
 
   const fetchTestimonials = async () => {
     try {
-      const response = await axios.get("https://majisa-solar-services.onrender.com/api/feedback");
+      const response = await axios.get(
+        "https://majisa-solar-services.onrender.com/api/feedback"
+      );
       setTestimonials(response.data);
     } catch (error) {
       console.error("Error fetching feedback:", error);
@@ -53,25 +55,30 @@ const Home = () => {
 
   return (
     <div className="mt-20">
-      <div className="mx-10 bg-gray-700 rounded-2xl">
+      <div className="mx-4 md:mx-10 bg-gray-700 rounded-2xl shadow-lg">
         <ImageSlider />
       </div>
 
-
-
-
       <SolarBenefits />
-      <div className="bg-gray-400 mt-20 max-w-6xl mx-auto rounded-2xl p-6">
-  <video
-    src={video}
-    autoPlay
-    loop
-    controls={false}
-    className="w-full h-84 object-cover rounded-xl shadow-lg block"
-  />
-</div>
+      <div className="bg-gray-400 mt-20 mx-4 sm:mx-6 md:mx-10 max-w-6xl rounded-2xl p-4 sm:p-6 shadow-lg">
+        <video
+          src={video}
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={true}
+          className="w-full h-[180px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-xl"
+        />
+      </div>
+
       <WhyGoSolar />
+
+      
+   
       <ProjectSlider />
+   
+
 
       {/* Testimonials */}
       <section className="bg-gray-100 py-10">

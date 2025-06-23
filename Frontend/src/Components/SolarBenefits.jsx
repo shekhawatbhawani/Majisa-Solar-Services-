@@ -58,7 +58,7 @@ const SolarBenefits = () => {
               <img
                 src={benefit.image}
                 alt={benefit.title}
-                className="rounded-2xl shadow-lg w-full h-64 sm:h-80 md:h-96 object-cover"
+                className="rounded-2xl shadow-lg w-full h-64 sm:h-80 md:h-96 object-fill"
               />
             </aside>
           </div>
