@@ -1,22 +1,52 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
-
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
   const [showPassword, setShowPassword] = useState(true); // 👈 password toggle state
-
+   const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(isLogin ? "Login Data" : "Signup Data", formData);
-    alert(`${isLogin ? "Login" : "Signup"} Successful!`);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const url = isLogin
+    ? "http://localhost:5000/api/auth/login"
+    : "http://localhost:5000/api/auth/signup";
+
+  try {
+    const response = await axios.post(url, formData);
+
+    // Store token & user in localStorage after login
+    if (isLogin) {
+      const { token, user } = response.data;
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
+      alert("Login successful!");
+        if (user.role === "admin") {
+        navigate("/adminhome");
+      } else {
+        navigate("/");
+      }
+    } else {
+      alert("Signup successful!");
+       navigate("/")
+    }
+
+    // Clear form after successful action
     setFormData({ name: "", email: "", password: "" });
-  };
+
+  } catch (error) {
+    const message = error.response?.data?.message || "Something went wrong";
+    alert(`${isLogin ? "Login" : "Signup"} failed: ${message}`);
+    console.error(error);
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-100 via-white to-green-100 px-4">

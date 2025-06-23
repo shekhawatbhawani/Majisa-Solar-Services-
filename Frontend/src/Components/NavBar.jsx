@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/Images/logo.jpeg";
+import logo from "../assets/Images/logo.png";
 import {
   FaHome,
   FaInfoCircle,

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import axios from "axios";
 
 const TestimonialForm = () => {
   const [formData, setFormData] = useState({
@@ -15,11 +16,18 @@ const TestimonialForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted Testimonial:", formData);
-    alert("🎉 Thank you for your feedback!");
-    setFormData({ name: "", message: "", rating: 0 });
+
+    try {
+      const res = await axios.post("http://localhost:5000/api/feedback", formData);
+      alert("🎉 Thank you for your feedback!");
+      console.log("Submitted:", res.data);
+      setFormData({ name: "", message: "", rating: 0 });
+    } catch (error) {
+      console.error("Error submitting feedback:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
