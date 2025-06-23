@@ -23,7 +23,7 @@ const Customer = () => {
   // 🟡 Fetch from backend API
   const fetchCustomers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/customers");
+      const res = await axios.get("https://majisa-solar-services.onrender.com/api/customers");
       setCustomers(res.data);
       setFilteredCustomers(res.data);
     } catch (error) {
@@ -46,7 +46,7 @@ const Customer = () => {
     const confirmChange = window.confirm("Are you sure you want to change the status?");
     if (confirmChange) {
       try {
-        await axios.put(`http://localhost:5000/api/customers/status/${id}`, { status: newStatus });
+        await axios.put(`https://majisa-solar-services.onrender.com/api/customers/status/${id}`, { status: newStatus });
 
         const updated = customers.map((item) =>
           item._id === id ? { ...item, status: newStatus } : item

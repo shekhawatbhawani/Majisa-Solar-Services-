@@ -17,7 +17,7 @@ const DailyReportForm = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/employees/all");
+        const response = await axios.get("https://majisa-solar-services.onrender.com/api/employees/all");
         setEmployeeList(response.data);
       } catch (error) {
         console.error("❌ Failed to fetch employee list:", error);
@@ -36,7 +36,7 @@ const DailyReportForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/reports/add", reportData);
+      const response = await axios.post("https://majisa-solar-services.onrender.com/api/reports/add", reportData);
       alert("✅ Report Submitted Successfully!");
       console.log("📋 Response:", response.data);
       setReportData({

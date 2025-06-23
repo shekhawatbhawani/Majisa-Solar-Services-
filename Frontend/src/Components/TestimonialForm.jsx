@@ -20,7 +20,7 @@ const TestimonialForm = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/feedback", formData);
+      const res = await axios.post("https://majisa-solar-services.onrender.com/api/feedback", formData);
       alert("🎉 Thank you for your feedback!");
       console.log("Submitted:", res.data);
       setFormData({ name: "", message: "", rating: 0 });

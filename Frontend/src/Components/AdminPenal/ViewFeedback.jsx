@@ -8,7 +8,7 @@ const ViewFeedback = () => {
 
   const fetchFeedbacks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/feedback");
+      const res = await axios.get("https://majisa-solar-services.onrender.com/api/feedback");
       setFeedbacks(res.data);
     } catch (err) {
       console.error("Failed to fetch feedbacks:", err);
@@ -22,7 +22,7 @@ const ViewFeedback = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/feedback/${id}`);
+      await axios.delete(`https://majisa-solar-services.onrender.com/api/feedback/${id}`);
       setFeedbacks((prev) => prev.filter((fb) => fb._id !== id));
     } catch (err) {
       console.error("Error deleting feedback:", err);

@@ -11,7 +11,7 @@ const Employee = () => {
   // Function to fetch all employees
   const fetchAllEmployees = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/employees/all");
+      const res = await axios.get("https://majisa-solar-services.onrender.com/api/employees/all");
       setEmployees(res.data);
       setFilteredEmployees(res.data);
     } catch (error) {

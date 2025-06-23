@@ -33,7 +33,7 @@ const AddCustomerForm = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/customers/add", formData); // ✅ POST to backend route
+      const res = await axios.post("https://majisa-solar-services.onrender.com/api/customers/add", formData); // ✅ POST to backend route
       alert("Customer added successfully!");
       console.log("Response:", res.data);
 

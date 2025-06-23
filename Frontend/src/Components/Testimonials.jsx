@@ -31,7 +31,7 @@ const TestimonialsWithForm = () => {
 
   const fetchFeedbacks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/feedback");
+      const res = await axios.get("https://majisa-solar-services.onrender.com/api/feedback");
       setAllFeedbacks(res.data);
     } catch (error) {
       console.error("Error fetching feedback:", error);
@@ -50,7 +50,7 @@ const TestimonialsWithForm = () => {
     if (!rating) return alert("Please select a rating before submitting.");
 
     try {
-      await axios.post("http://localhost:5000/api/feedback", {
+      await axios.post("https://majisa-solar-services.onrender.com/api/feedback", {
         ...formData,
         rating,
       });

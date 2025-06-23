@@ -9,7 +9,7 @@ const ReportList = () => {
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/reports/by-employee/${employeeId}`);
+        const response = await axios.get(`https://majisa-solar-services.onrender.com/api/reports/by-employee/${employeeId}`);
         setReports(response.data);
       } catch (error) {
         console.error("❌ Failed to fetch reports:", error);

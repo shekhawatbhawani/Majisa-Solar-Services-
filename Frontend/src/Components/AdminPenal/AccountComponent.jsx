@@ -34,7 +34,7 @@ const AccountComponent = () => {
   useEffect(() => {
     const fetchExpenses = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/expenses/all");
+        const res = await axios.get("https://majisa-solar-services.onrender.com/api/expenses/all");
         setExpenses(res.data);
       } catch (error) {
         console.error("Error fetching expenses:", error);
@@ -69,7 +69,7 @@ const AccountComponent = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:5000/api/expenses/add", newExpense);
+      const res = await axios.post("https://majisa-solar-services.onrender.com/api/expenses/add", newExpense);
       setExpenses([...expenses, res.data]);
       setFormData({ amount: "", description: "", date: "", month: "", year: "" });
       setShowForm(false);

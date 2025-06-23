@@ -17,7 +17,7 @@ const Contact = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    await axios.post("http://localhost:5000/api/contact", formData);
+    await axios.post("https://majisa-solar-services.onrender.com/api/contact", formData);
     alert("✅ Message sent and saved!");
     setFormData({ name: "", phone: "", email: "", message: "" });
   } catch (err) {

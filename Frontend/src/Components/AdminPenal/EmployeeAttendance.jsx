@@ -30,8 +30,8 @@ const EmployeeAttendance = () => {
       try {
         const monthIndex = months.indexOf(month);
         const [attendanceRes, employeeRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/attendance?month=${monthIndex}&year=${year}`),
-          axios.get("http://localhost:5000/api/employees/all")
+          axios.get(`https://majisa-solar-services.onrender.com/api/attendance?month=${monthIndex}&year=${year}`),
+          axios.get("https://majisa-solar-services.onrender.com/api/employees/all")
         ]);
 
         const balanceMap = new Map();
@@ -133,7 +133,7 @@ const EmployeeAttendance = () => {
       }));
 
       return axios
-        .post("http://localhost:5000/api/attendance", {
+        .post("https://majisa-solar-services.onrender.com/api/attendance", {
           employeeId: emp._id,
           month: monthIndex,
           year: parseInt(year),
@@ -142,7 +142,7 @@ const EmployeeAttendance = () => {
           salaryPerDay: emp.salaryPerDay,
         })
         .then(() =>
-          axios.put(`http://localhost:5000/api/employees/${emp._id}/balance`, {
+          axios.put(`https://majisa-solar-services.onrender.com/api/employees/${emp._id}/balance`, {
             balance: emp.totalBalance,
           })
         );

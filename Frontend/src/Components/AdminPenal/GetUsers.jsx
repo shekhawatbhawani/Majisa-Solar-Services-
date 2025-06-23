@@ -10,7 +10,7 @@ const GetUsers = () => {
     // Fetch from your API endpoint
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/auth/getUser");
+        const response = await axios.get("https://majisa-solar-services.onrender.com/api/auth/getUser");
         setUsers(response.data); // adjust as per your API response structure
       } catch (err) {
         setError("Failed to fetch users");

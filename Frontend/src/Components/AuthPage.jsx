@@ -16,8 +16,8 @@ const AuthForm = () => {
   e.preventDefault();
 
   const url = isLogin
-    ? "http://localhost:5000/api/auth/login"
-    : "http://localhost:5000/api/auth/signup";
+    ? "https://majisa-solar-services.onrender.com/api/auth/login"
+    : "https://majisa-solar-services.onrender.com/api/auth/signup";
 
   try {
     const response = await axios.post(url, formData);

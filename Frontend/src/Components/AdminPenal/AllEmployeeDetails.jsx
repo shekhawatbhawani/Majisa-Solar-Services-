@@ -12,7 +12,7 @@ const AllEmployeeDetails = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/employees/all");
+        const res = await axios.get("https://majisa-solar-services.onrender.com/api/employees/all");
         setEmployees(res.data);
         setLoading(false);
       } catch (error) {
@@ -27,7 +27,7 @@ const AllEmployeeDetails = () => {
     setSelectedEmployee(employee);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/attendance/employee/${employee._id}`
+        `https://majisa-solar-services.onrender.com/api/attendance/employee/${employee._id}`
       );
       setAttendance(res.data);
     } catch (error) {

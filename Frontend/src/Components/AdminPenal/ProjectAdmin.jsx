@@ -22,7 +22,7 @@ const ProjectAdmin = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/projects");
+      const res = await axios.get("https://majisa-solar-services.onrender.com/api/projects");
       setProjects(res.data.reverse());
     } catch (err) {
       console.error("Error fetching projects:", err);
@@ -42,7 +42,7 @@ const ProjectAdmin = () => {
     const techniciansArray = formData.technicians.split(",").map((t) => t.trim());
 
     try {
-      await axios.post("http://localhost:5000/api/projects", {
+      await axios.post("https://majisa-solar-services.onrender.com/api/projects", {
         ...formData,
         technicians: techniciansArray,
       });
@@ -73,7 +73,7 @@ const ProjectAdmin = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this project?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`);
+      await axios.delete(`https://majisa-solar-services.onrender.com/api/projects/${id}`);
       fetchProjects();
     } catch (err) {
       console.error("Error deleting project:", err);

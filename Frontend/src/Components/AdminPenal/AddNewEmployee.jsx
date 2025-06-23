@@ -26,7 +26,7 @@ const AddNewEmployee = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/employees/add", formData);
+      const res = await axios.post("https://majisa-solar-services.onrender.com/api/employees/add", formData);
 
       if (res.status === 201) {
         alert("✅ Employee added successfully!");

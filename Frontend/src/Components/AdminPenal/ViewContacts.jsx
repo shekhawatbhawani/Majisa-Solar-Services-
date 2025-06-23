@@ -8,7 +8,7 @@ const ViewContacts = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/contact");
+        const res = await axios.get("https://majisa-solar-services.onrender.com/api/contact");
         setMessages(res.data);
         setLoading(false);
       } catch (err) {
