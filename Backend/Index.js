@@ -16,7 +16,7 @@ connectDB();
 
 const app = express();
 const corsOptions = {
-  origin: 'http://localhost:5173', // your frontend Vite dev server
+  origin:  ['http://localhost:5173', 'https://majisa-solar.vercel.app'], // your frontend Vite dev server
   credentials: true,
 };
 
