@@ -24,7 +24,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send("Social Media Api is running...")
+      res.send("✅ Majisa Solar Backend is running!");
 })
 
 app.use('/api/auth', authRoutes); 
