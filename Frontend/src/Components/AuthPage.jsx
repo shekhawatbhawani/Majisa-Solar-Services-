@@ -30,8 +30,14 @@ const AuthForm = () => {
       alert("Login successful!");
         if (user.role === "admin") {
         navigate("/adminhome");
+        
+    console.log("Token:", res.data.token); // ✅ confirm token mil raha
+    localStorage.setItem("token", res.data.token); // ✅ save in browser
       } else {
         navigate("/");
+        
+    console.log("Token:", res.data.token); // ✅ confirm token mil raha
+    localStorage.setItem("token", res.data.token); // ✅ save in browser
       }
     } else {
       alert("Signup successful!");
