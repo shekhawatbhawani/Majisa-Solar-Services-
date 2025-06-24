@@ -61,7 +61,7 @@ const Customer = () => {
   };
 
   return (
-    <div className="min-h-screen p-6 md:p-12 bg-gradient-to-br m-10 from-white via-green-50 to-green-100">
+    <div className="min-h-screen py-6 md:p-12 bg-gradient-to-br my-10 from-white via-green-50 to-green-100">
       <div className="max-w-5xl mx-auto bg-white p-6 rounded-xl shadow-lg">
         <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
           <h2 className="text-3xl font-bold text-green-700">Customer List</h2>

@@ -11,7 +11,7 @@ const AdminHome = () => {
   };
 
   return (
-    <div className="min-h-screen mt-6 w-full bg-gradient-to-br from-white via-green-50 to-green-100 p-6 md:p-12">
+    <div className="min-h-screen sm:mt-5 mt-6 w-full bg-gradient-to-br from-white via-green-50 to-green-100 p-6 md:p-12">
       <div className="max-w-7xl mx-auto">
         {/* Welcome Text */}
         <h1 className="text-4xl font-bold text-green-700 text-center mb-10">
