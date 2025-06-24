@@ -17,18 +17,26 @@ const ViewFeedback = () => {
     }
   };
 
-  const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this feedback?");
-    if (!confirmDelete) return;
 
-    try {
-      await axios.delete(`https://majisa-solar-services.onrender.com/api/feedback/${id}`);
-      setFeedbacks((prev) => prev.filter((fb) => fb._id !== id));
-    } catch (err) {
-      console.error("Error deleting feedback:", err);
-      alert("Failed to delete feedback.");
-    }
-  };
+
+
+const handleDelete = async (id) => {
+  const confirmDelete = window.confirm("Are you sure you want to delete this feedback?");
+  if (!confirmDelete) return;
+
+  try {
+    await axios.delete(`https://majisa-solar-services.onrender.com/api/feedback/${id}`);
+    
+    // Update the local state to remove the deleted feedback
+    setFeedbacks((prevFeedbacks) => prevFeedbacks.filter((fb) => fb._id !== id));
+
+    alert("Feedback deleted successfully.");
+  } catch (error) {
+    console.error("Error deleting feedback:", error);
+    alert("Failed to delete feedback. Please try again later.");
+  }
+};
+
 
   useEffect(() => {
     fetchFeedbacks();

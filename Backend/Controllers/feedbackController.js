@@ -26,3 +26,21 @@ exports.getAllFeedbacks = async (req, res) => {
     res.status(500).json({ error: "Failed to fetch feedbacks" });
   }
 };
+
+
+// DELETE - Delete feedback by ID
+exports.deleteFeedback = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deletedFeedback = await Feedback.findByIdAndDelete(id);
+
+    if (!deletedFeedback) {
+      return res.status(404).json({ error: "Feedback not found" });
+    }
+
+    res.json({ message: "Feedback deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to delete feedback" });
+  }
+};
