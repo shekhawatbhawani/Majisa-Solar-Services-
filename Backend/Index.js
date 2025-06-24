@@ -33,7 +33,7 @@ app.use('/api/auth', authRoutes);
 app.use("/api/employees", employeeRoutes);
 app.use("/api/reports", reportRoutes);
 app.use("/api/customers", customerRoutes);
-app.use("/api", feedbackRoutes);
+app.use("/api/feedback", feedbackRoutes);
 app.use("/api", contactRoutes);
 app.use("/api/attendance", attendanceRoutes);
 app.use("/api/expenses", expenseRoutes);
