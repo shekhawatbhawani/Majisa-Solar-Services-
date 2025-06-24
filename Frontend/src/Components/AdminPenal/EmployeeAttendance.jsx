@@ -161,7 +161,7 @@ const EmployeeAttendance = () => {
   if (loading) return <div className="p-6 text-center">⏳ Loading employees...</div>;
 
   return (
-    <div className="p-4 md:p-6 mt-10 bg-gray-50 min-h-screen overflow-auto">
+    <div className="p-4 md:p-6 mt-15 bg-gray-50 min-h-screen overflow-auto">
       <h1 className="text-2xl font-bold mb-4 text-green-700 text-center">
         📅 Employee Attendance Tracker
       </h1>

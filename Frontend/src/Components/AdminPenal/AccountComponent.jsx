@@ -89,7 +89,7 @@ const AccountComponent = () => {
   const totalExpense = filteredExpenses.reduce((acc, e) => acc + e.amount, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-100 via-white to-green-200 p-6">
+    <div className="min-h-screen bg-gradient-to-br mt-15 from-green-100 via-white to-green-200 p-6">
       <h2 className="text-3xl font-bold text-center text-green-700 mb-6">💼 Account Summary</h2>
 
       <div className="max-w-5xl mx-auto">
