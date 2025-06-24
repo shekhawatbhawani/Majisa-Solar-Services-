@@ -16,17 +16,9 @@ connectDB();
 
 const app = express();
 const corsOptions = {
-  origin: function (origin, callback) {
-    const allowedOrigins = ['http://localhost:5173', 'https://majisa-solar-services-e2nqckcit.vercel.app'];
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: true, // 🔥 Allow all origins dynamically
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
-  
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
