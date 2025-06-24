@@ -24,7 +24,7 @@ const GetUsers = () => {
   }, []);
 
   return (
-    <div className="min-h-screen p-6 md:p-12 bg-green-50">
+    <div className="min-h-screen mt-5 p-6 md:p-12 bg-green-50">
       <div className="max-w-5xl mx-auto bg-white p-6 rounded-xl shadow-md">
         <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">
           All Users

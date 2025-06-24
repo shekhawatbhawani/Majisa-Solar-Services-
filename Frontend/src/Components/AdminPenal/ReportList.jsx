@@ -27,7 +27,7 @@ const ReportList = () => {
         </h2>
 
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white text-center border border-gray-300">
+          <table className="min-w-full bg-white mt-5 text-center border border-gray-300">
             <thead className="bg-green-100">
               <tr>
                 <th className="py-3 px-4 border-b">Employee Name</th>
