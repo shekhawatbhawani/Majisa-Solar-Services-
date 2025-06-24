@@ -20,8 +20,8 @@ const ReportList = () => {
   }, [employeeId]);
 
   return (
-    <div className="min-h-screen py-6 md:p-12 bg-green-50">
-      <div className="max-w-6xl mx-auto bg-white py-6 rounded-xl shadow-lg">
+    <div className="min-h-screen py-6 px-2 sm:mx-1 md:p-12 bg-green-50">
+      <div className="max-w-6xl mx-auto mt-5 bg-white py-6 rounded-xl shadow-lg">
         <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">
           Reports for Employee
         </h2>
